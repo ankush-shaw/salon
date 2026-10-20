@@ -105,27 +105,43 @@ export const Contact: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column: Stylized Architectural Map Visual with Atelier anchor */}
+        {/* Right Column: Interactive Google Maps with Atelier anchor */}
         <div id="atelier" className="lg:col-span-6">
-          <div className="relative bg-surface-container-high border border-outline-variant/40 p-2.5 sm:p-3">
+          <div className="relative bg-surface-container-high border border-outline-variant/40 p-2.5 sm:p-3 shadow-sm">
             <div className="aspect-[4/3] w-full overflow-hidden relative bg-surface">
-              <img
-                src={locationSection.mapImage.src}
-                alt={locationSection.mapImage.alt}
+              {/* Interactive Google Map Embed */}
+              <iframe
+                title="Atelier Studio Location Map"
+                src={locationSection.mapEmbedUrl}
+                className="w-full h-full border-0 filter contrast-[98%]"
                 loading="lazy"
-                className="w-full h-full object-cover contrast-[90%] brightness-[98%]"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+                aria-label="Interactive Google Map showing Atelier Studio location"
               />
-              <div className="absolute inset-0 bg-primary/5 pointer-events-none" />
+
+              {/* Top-Right Quick Action: Direct Google Maps Directions */}
+              <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10">
+                <a
+                  href={contact.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 bg-surface-container-lowest/95 backdrop-blur-md px-3 py-1.5 sm:px-3.5 sm:py-2 border border-outline-variant/40 shadow-sm text-[11px] sm:text-xs font-sans font-medium text-primary hover:text-secondary hover:bg-surface-container-lowest transition-all duration-200 uppercase tracking-wider"
+                >
+                  <span>Open Maps</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-secondary" />
+                </a>
+              </div>
 
               {/* Location Badge with Beacon */}
-              <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-surface-container-lowest px-3.5 py-2.5 sm:px-4 sm:py-3 border border-outline-variant/30 flex items-center gap-3 shadow-sm">
+              <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-10 bg-surface-container-lowest/95 backdrop-blur-md px-3.5 py-2.5 sm:px-4 sm:py-3 border border-outline-variant/40 flex items-center gap-3 shadow-sm pointer-events-none max-w-[calc(100%-24px)]">
                 <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-secondary animate-pulse shrink-0" aria-hidden="true" />
-                <div>
-                  <p className="font-sans text-xs sm:text-[13px] font-semibold text-primary uppercase tracking-wide">
-                    {locationSection.mapImage.badgeTitle}
+                <div className="truncate">
+                  <p className="font-sans text-xs sm:text-[13px] font-semibold text-primary uppercase tracking-wide truncate">
+                    {locationSection.badgeTitle}
                   </p>
-                  <p className="font-sans text-[11px] text-outline">
-                    {locationSection.mapImage.badgeSubtitle}
+                  <p className="font-sans text-[11px] text-outline truncate">
+                    {locationSection.badgeSubtitle}
                   </p>
                 </div>
               </div>

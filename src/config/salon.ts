@@ -170,7 +170,10 @@ export interface SalonConfig {
   locationSection: {
     eyebrow: string;
     title: string;
-    mapImage: {
+    mapEmbedUrl: string;
+    badgeTitle: string;
+    badgeSubtitle: string;
+    mapImage?: {
       src: string;
       alt: string;
       badgeTitle: string;
@@ -209,7 +212,7 @@ export const salonConfig: SalonConfig = {
       pincode: "XXXXXX",
       full: "42 Atelier Studio Avenue, Design District, City, State XXXXXX",
     },
-    mapsUrl: "https://maps.google.com",
+    mapsUrl: "https://maps.google.com/?q=42+Atelier+Studio+Avenue,+Design+District",
     openingHours: [
       {
         days: "Tuesday – Sunday",
@@ -576,6 +579,10 @@ export const salonConfig: SalonConfig = {
   locationSection: {
     eyebrow: "Studio Visit",
     title: "Visit the Atelier",
+    mapEmbedUrl:
+      "https://maps.google.com/maps?q=42+Atelier+Studio+Avenue,+Design+District&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    badgeTitle: "THE ATELIER STUDIO",
+    badgeSubtitle: "Valet parking available",
     mapImage: {
       src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCX7JgFui7910Vkq4ikI4mjFkxkj-X5bvXrLCPSRjL5tEHjGlGzsvtHk6UkqFPkEhutKClVGvi-B7UOF2beine5SZSiHtXzNdPJB1QwJvK6q6APbVhboW9meoSSuZ5Su8ypijOwkcK18itILYTuPWZaTX0Kk0C3UCNqv1eeeHD0y1c8_DxHXC-qwIeHsR-Y6Ck1m8ubfmytuyNv3-x2DJJLoMQPpWqnLlx5oBoJ_OnlKBOCzU1Cfa8a",
       alt: "Minimalist architectural map graphic showing Atelier location.",
