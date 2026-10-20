@@ -108,7 +108,7 @@ export const Footer: React.FC = () => {
                 />
                 <button
                   type="submit"
-                  className="bg-secondary text-on-secondary px-5 py-2.5 font-sans text-xs font-semibold uppercase tracking-wider hover:bg-secondary-container hover:text-on-secondary-container transition-colors shrink-0"
+                  className="btn-tactile bg-secondary text-on-secondary px-5 py-2.5 font-sans text-xs font-semibold uppercase tracking-wider hover:bg-secondary-container hover:text-on-secondary-container transition-colors shrink-0"
                 >
                   Join
                 </button>

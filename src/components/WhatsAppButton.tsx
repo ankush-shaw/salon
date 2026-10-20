@@ -8,7 +8,7 @@ export const WhatsAppButton: React.FC = () => {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex items-center group">
       {/* Tooltip */}
-      <div className="mr-3 hidden sm:group-hover:block bg-primary-container text-surface px-3 py-1.5 border border-outline-variant/30 text-xs shadow-md whitespace-nowrap transition-all duration-200 pointer-events-none">
+      <div className="mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none bg-primary-container text-surface px-3 py-1.5 border border-outline-variant/30 text-xs shadow-md whitespace-nowrap">
         <span className="font-sans font-medium">Book via WhatsApp</span>
       </div>
 
@@ -18,7 +18,7 @@ export const WhatsAppButton: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Book via WhatsApp"
-        className="w-13 h-13 sm:w-14 sm:h-14 bg-[#25D366] hover:bg-[#20ba59] text-white flex items-center justify-center transition-all duration-200 hover:scale-105 shadow-lg focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
+        className="w-13 h-13 sm:w-14 sm:h-14 bg-[#25D366] hover:bg-[#20ba59] text-white flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 shadow-lg focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
       >
         <svg
           className="w-6 h-6 sm:w-7 sm:h-7 fill-current"

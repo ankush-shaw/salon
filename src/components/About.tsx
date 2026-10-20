@@ -1,5 +1,6 @@
 import React from 'react';
 import { salonConfig } from '../config/salon';
+import { ScrollReveal } from './ScrollReveal';
 
 export const About: React.FC = () => {
   const { aboutSection } = salonConfig;
@@ -11,13 +12,13 @@ export const About: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         {/* Left Column (6 cols): Visual + Quote card */}
-        <div className="lg:col-span-6 relative">
+        <ScrollReveal className="lg:col-span-6 relative">
           <div className="aspect-[4/5] bg-surface overflow-hidden border border-outline-variant/30 relative">
             <img
               src={aboutSection.image.src}
               alt={aboutSection.image.alt}
               loading="lazy"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-[1.02]"
             />
           </div>
 
@@ -30,10 +31,10 @@ export const About: React.FC = () => {
               — {aboutSection.quoteAuthor}
             </p>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Right Column (6 cols): Story & Philosophy */}
-        <div className="lg:col-span-6 flex flex-col justify-center">
+        <ScrollReveal delay={150} className="lg:col-span-6 flex flex-col justify-center">
           <span className="font-sans text-[10px] sm:text-[11px] uppercase tracking-widest text-secondary font-bold mb-3">
             {aboutSection.eyebrow}
           </span>
@@ -64,7 +65,7 @@ export const About: React.FC = () => {
               </React.Fragment>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

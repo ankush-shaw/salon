@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Clock, Phone, Camera, ArrowUpRight } from 'lucide-react';
 import { salonConfig } from '../config/salon';
+import { ScrollReveal } from './ScrollReveal';
 
 export const Contact: React.FC = () => {
   const { locationSection, contact } = salonConfig;
@@ -12,7 +13,7 @@ export const Contact: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         {/* Left Column: Details */}
-        <div className="lg:col-span-6 space-y-8">
+        <ScrollReveal className="lg:col-span-6 space-y-8">
           <div>
             <span className="font-sans text-[10px] sm:text-[11px] uppercase tracking-widest text-secondary font-bold">
               {locationSection.eyebrow}
@@ -37,7 +38,7 @@ export const Contact: React.FC = () => {
                   href={contact.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 font-sans text-xs text-secondary uppercase tracking-wider mt-2 hover:underline font-semibold"
+                  className="btn-tactile inline-flex items-center gap-1 font-sans text-xs text-secondary uppercase tracking-wider mt-2 hover:underline font-semibold"
                 >
                   <span>Get Directions</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
@@ -68,7 +69,7 @@ export const Contact: React.FC = () => {
                 <p className="font-serif text-base text-primary font-medium">Direct Enquiries</p>
                 <p className="font-sans text-xs sm:text-[14px] text-on-surface-variant mt-1 leading-relaxed">
                   Telephone:{' '}
-                  <a href={`tel:${contact.phone}`} className="hover:text-primary hover:underline">
+                  <a href={`tel:${contact.phone}`} className="hover:text-primary hover:underline transition-colors">
                     {contact.phoneDisplay}
                   </a>
                   <br />
@@ -77,7 +78,7 @@ export const Contact: React.FC = () => {
                     href={`https://wa.me/${contact.whatsappNumber}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-primary hover:underline"
+                    className="hover:text-primary hover:underline transition-colors"
                   >
                     {contact.whatsappDisplay}
                   </a>
@@ -103,10 +104,10 @@ export const Contact: React.FC = () => {
               </div>
             )}
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Right Column: Interactive Google Maps with Atelier anchor */}
-        <div id="atelier" className="lg:col-span-6">
+        <ScrollReveal delay={150} id="atelier" className="lg:col-span-6">
           <div className="relative bg-surface-container-high border border-outline-variant/40 p-2.5 sm:p-3 shadow-sm">
             <div className="aspect-[4/3] w-full overflow-hidden relative bg-surface">
               {/* Interactive Google Map Embed */}
@@ -126,7 +127,7 @@ export const Contact: React.FC = () => {
                   href={contact.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 bg-surface-container-lowest/95 backdrop-blur-md px-3 py-1.5 sm:px-3.5 sm:py-2 border border-outline-variant/40 shadow-sm text-[11px] sm:text-xs font-sans font-medium text-primary hover:text-secondary hover:bg-surface-container-lowest transition-all duration-200 uppercase tracking-wider"
+                  className="btn-tactile inline-flex items-center gap-1.5 bg-surface-container-lowest/95 backdrop-blur-md px-3 py-1.5 sm:px-3.5 sm:py-2 border border-outline-variant/40 shadow-sm text-[11px] sm:text-xs font-sans font-medium text-primary hover:text-secondary hover:bg-surface-container-lowest uppercase tracking-wider"
                 >
                   <span>Open Maps</span>
                   <ArrowUpRight className="w-3.5 h-3.5 text-secondary" />
@@ -147,7 +148,7 @@ export const Contact: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

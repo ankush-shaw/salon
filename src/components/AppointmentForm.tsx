@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { CheckCircle2, Clock, MessageSquare, ExternalLink, AlertCircle } from 'lucide-react';
 import { salonConfig } from '../config/salon';
+import { ScrollReveal } from './ScrollReveal';
 
 interface AppointmentFormProps {
   selectedServiceId?: string;
@@ -127,7 +128,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ selectedServic
     <section id="appointment" className="py-20 sm:py-24 px-5 sm:px-6 lg:px-12 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
         {/* Left Column: Context & Guarantees */}
-        <div className="lg:col-span-5">
+        <ScrollReveal className="lg:col-span-5">
           <span className="font-sans text-[10px] sm:text-[11px] uppercase tracking-widest text-secondary font-bold">
             {appointmentSection.eyebrow}
           </span>
@@ -173,10 +174,10 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ selectedServic
               .
             </p>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Right Column: Appointment Form */}
-        <div className="lg:col-span-7 bg-surface-container-lowest p-6 sm:p-8 lg:p-12 border border-outline-variant/30">
+        <ScrollReveal delay={150} className="lg:col-span-7 bg-surface-container-lowest p-6 sm:p-8 lg:p-12 border border-outline-variant/30">
           {requestDispatched && (
             <div className="mb-6 p-4 bg-[#E9DFD2]/60 border border-secondary/30 text-primary-container">
               <div className="flex items-start gap-2.5">
@@ -383,7 +384,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ selectedServic
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 bg-primary-container text-on-primary font-sans text-xs font-semibold tracking-widest uppercase py-4 px-6 hover:bg-secondary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-secondary"
+              className="btn-tactile w-full inline-flex items-center justify-center gap-2 bg-primary-container text-on-primary font-sans text-xs font-semibold tracking-widest uppercase py-4 px-6 hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-secondary"
             >
               <span>Request an Appointment</span>
               <ExternalLink className="w-3.5 h-3.5" />
@@ -394,7 +395,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ selectedServic
               This request will open WhatsApp with your chosen details. The salon concierge will verify schedule availability and confirm your booking.
             </p>
           </form>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, CheckCircle2, ShieldCheck, Sparkles } from 'lucide-react';
 import { salonConfig } from '../config/salon';
+import { ScrollReveal } from './ScrollReveal';
 
 interface ServicesProps {
   onSelectService?: (serviceId: string) => void;
@@ -29,7 +30,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
   return (
     <section id="services" className="py-20 sm:py-24 px-5 sm:px-6 lg:px-12 max-w-7xl mx-auto">
       {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12 pb-6 border-b border-outline-variant/30">
+      <ScrollReveal className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12 pb-6 border-b border-outline-variant/30">
         <div>
           <div className="flex items-center gap-3 mb-2">
             <span className="h-px w-6 bg-secondary" aria-hidden="true" />
@@ -44,14 +45,14 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
         <p className="font-sans text-sm sm:text-base text-on-surface-variant max-w-md mt-4 md:mt-0 leading-relaxed font-normal">
           {servicesSection.description}
         </p>
-      </div>
+      </ScrollReveal>
 
       {/* Interactive Category Switcher / Tabs */}
       <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-10 sm:mb-12 border-b border-outline-variant/20 select-none no-scrollbar">
         <button
           type="button"
           onClick={() => setSelectedCategory('all')}
-          className={`px-4 sm:px-5 py-2.5 font-sans text-xs tracking-wider uppercase transition-colors shrink-0 font-medium ${
+          className={`btn-tactile px-4 sm:px-5 py-2.5 font-sans text-xs tracking-wider uppercase shrink-0 font-medium ${
             selectedCategory === 'all'
               ? 'bg-primary text-on-primary'
               : 'border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-primary'
@@ -64,7 +65,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
         <button
           type="button"
           onClick={() => setSelectedCategory('hair')}
-          className={`px-4 sm:px-5 py-2.5 font-sans text-xs tracking-wider uppercase transition-colors shrink-0 font-medium ${
+          className={`btn-tactile px-4 sm:px-5 py-2.5 font-sans text-xs tracking-wider uppercase shrink-0 font-medium ${
             selectedCategory === 'hair'
               ? 'bg-primary text-on-primary'
               : 'border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-primary'
@@ -77,7 +78,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
         <button
           type="button"
           onClick={() => setSelectedCategory('skin')}
-          className={`px-4 sm:px-5 py-2.5 font-sans text-xs tracking-wider uppercase transition-colors shrink-0 font-medium ${
+          className={`btn-tactile px-4 sm:px-5 py-2.5 font-sans text-xs tracking-wider uppercase shrink-0 font-medium ${
             selectedCategory === 'skin'
               ? 'bg-primary text-on-primary'
               : 'border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-primary'
@@ -90,7 +91,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
         <button
           type="button"
           onClick={() => setSelectedCategory('beauty')}
-          className={`px-4 sm:px-5 py-2.5 font-sans text-xs tracking-wider uppercase transition-colors shrink-0 font-medium ${
+          className={`btn-tactile px-4 sm:px-5 py-2.5 font-sans text-xs tracking-wider uppercase shrink-0 font-medium ${
             selectedCategory === 'beauty'
               ? 'bg-primary text-on-primary'
               : 'border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-primary'
@@ -103,7 +104,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
         <button
           type="button"
           onClick={() => setSelectedCategory('grooming')}
-          className={`px-4 sm:px-5 py-2.5 font-sans text-xs tracking-wider uppercase transition-colors shrink-0 font-medium ${
+          className={`btn-tactile px-4 sm:px-5 py-2.5 font-sans text-xs tracking-wider uppercase shrink-0 font-medium ${
             selectedCategory === 'grooming'
               ? 'bg-primary text-on-primary'
               : 'border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-primary'
@@ -116,64 +117,65 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
 
       {/* Main Grid: Editorial Feature Card + Curated Service List */}
       {(showHair || showSkin) && (
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-10 items-start mb-14 sm:mb-16">
-          {/* Left Editorial Feature Card (5 cols) */}
-          <div className="lg:col-span-5 bg-surface-container-low border border-outline-variant/40 p-6 lg:p-8 flex flex-col justify-between relative">
-            <div className="mb-6">
-              <div className="flex items-center justify-between gap-2 mb-4">
-                <span className="bg-secondary/10 border border-secondary/30 text-secondary font-sans text-[10px] font-bold uppercase tracking-widest px-2.5 py-1">
-                  {servicesSection.curatorsChoice.badge}
-                </span>
-                <span className="font-sans text-xs text-outline tracking-wider">
-                  {servicesSection.curatorsChoice.duration}
-                </span>
+        <ScrollReveal>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-10 items-start mb-14 sm:mb-16">
+            {/* Left Editorial Feature Card (5 cols) */}
+            <div className="lg:col-span-5 bg-surface-container-low border border-outline-variant/40 p-6 lg:p-8 flex flex-col justify-between relative">
+              <div className="mb-6">
+                <div className="flex items-center justify-between gap-2 mb-4">
+                  <span className="bg-secondary/10 border border-secondary/30 text-secondary font-sans text-[10px] font-bold uppercase tracking-widest px-2.5 py-1">
+                    {servicesSection.curatorsChoice.badge}
+                  </span>
+                  <span className="font-sans text-xs text-outline tracking-wider">
+                    {servicesSection.curatorsChoice.duration}
+                  </span>
+                </div>
+
+                <div className="aspect-[4/3] overflow-hidden mb-6 border border-outline-variant/30 bg-surface">
+                  <img
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-[1.02]"
+                    src={servicesSection.curatorsChoice.image.src}
+                    alt={servicesSection.curatorsChoice.image.alt}
+                    loading="lazy"
+                  />
+                </div>
+
+                <h3 className="font-serif text-xl sm:text-2xl text-primary font-medium mb-2">
+                  {servicesSection.curatorsChoice.title}
+                </h3>
+                <p className="font-sans text-xs sm:text-[13px] text-on-surface-variant leading-relaxed mb-4">
+                  {servicesSection.curatorsChoice.description}
+                </p>
+
+                <div className="p-3 bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant font-sans text-xs space-y-1.5">
+                  {servicesSection.curatorsChoice.inclusions.map((inclusion, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-secondary shrink-0" />
+                      <span>{inclusion}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div className="aspect-[4/3] overflow-hidden mb-6 border border-outline-variant/30 bg-surface">
-                <img
-                  className="w-full h-full object-cover"
-                  src={servicesSection.curatorsChoice.image.src}
-                  alt={servicesSection.curatorsChoice.image.alt}
-                  loading="lazy"
-                />
-              </div>
-
-              <h3 className="font-serif text-xl sm:text-2xl text-primary font-medium mb-2">
-                {servicesSection.curatorsChoice.title}
-              </h3>
-              <p className="font-sans text-xs sm:text-[13px] text-on-surface-variant leading-relaxed mb-4">
-                {servicesSection.curatorsChoice.description}
-              </p>
-
-              <div className="p-3 bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant font-sans text-xs space-y-1.5">
-                {servicesSection.curatorsChoice.inclusions.map((inclusion, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-secondary shrink-0" />
-                    <span>{inclusion}</span>
-                  </div>
-                ))}
+              <div className="pt-4 border-t border-outline-variant/30 flex items-center justify-between gap-4">
+                <div>
+                  <span className="font-sans text-[11px] text-outline uppercase block tracking-wider font-medium">
+                    {servicesSection.curatorsChoice.rateLabel}
+                  </span>
+                  <span className="font-serif text-xl text-primary font-medium">
+                    {servicesSection.curatorsChoice.price}
+                  </span>
+                </div>
+                <a
+                  href="#appointment"
+                  onClick={() => handleReserveClick('curators-choice')}
+                  className="btn-tactile inline-flex items-center gap-2 bg-primary text-on-primary font-sans text-xs font-semibold tracking-widest uppercase px-5 sm:px-6 py-3 hover:bg-secondary"
+                >
+                  <span>Reserve Ritual</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
               </div>
             </div>
-
-            <div className="pt-4 border-t border-outline-variant/30 flex items-center justify-between gap-4">
-              <div>
-                <span className="font-sans text-[11px] text-outline uppercase block tracking-wider font-medium">
-                  {servicesSection.curatorsChoice.rateLabel}
-                </span>
-                <span className="font-serif text-xl text-primary font-medium">
-                  {servicesSection.curatorsChoice.price}
-                </span>
-              </div>
-              <a
-                href="#appointment"
-                onClick={() => handleReserveClick('curators-choice')}
-                className="inline-flex items-center gap-2 bg-primary text-on-primary font-sans text-xs font-semibold tracking-widest uppercase px-5 sm:px-6 py-3 hover:bg-secondary transition-colors"
-              >
-                <span>Reserve Ritual</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
-            </div>
-          </div>
 
           {/* Right Service Menu List (7 cols) */}
           <div className="lg:col-span-7 space-y-10">
@@ -229,7 +231,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
                         <a
                           href="#appointment"
                           onClick={() => handleReserveClick(item.id)}
-                          className="border border-primary-container text-primary-container hover:bg-primary-container hover:text-surface font-sans text-[11px] font-semibold tracking-widest uppercase px-3.5 py-1.5 transition-colors"
+                          className="btn-tactile border border-primary-container text-primary-container hover:bg-primary-container hover:text-surface font-sans text-[11px] font-semibold tracking-widest uppercase px-3.5 py-1.5"
                         >
                           Reserve
                         </a>
@@ -292,7 +294,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
                         <a
                           href="#appointment"
                           onClick={() => handleReserveClick(item.id)}
-                          className="border border-primary-container text-primary-container hover:bg-primary-container hover:text-surface font-sans text-[11px] font-semibold tracking-widest uppercase px-3.5 py-1.5 transition-colors"
+                          className="btn-tactile border border-primary-container text-primary-container hover:bg-primary-container hover:text-surface font-sans text-[11px] font-semibold tracking-widest uppercase px-3.5 py-1.5"
                         >
                           Reserve
                         </a>
@@ -304,133 +306,138 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
             )}
           </div>
         </div>
+        </ScrollReveal>
       )}
 
       {/* 2-Column Compact Rituals: Beauty & Grooming (Pixel-matched to Stitch Design) */}
       {(showBeauty || showGrooming) && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 pt-2 mb-14 sm:mb-16">
-          {/* Beauty Rituals Card */}
-          {showBeauty && beautyCategory && (
-            <div className="bg-surface-container-low p-6 sm:p-8 lg:p-10 border border-outline-variant/30 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center gap-4 mb-6">
-                  <h3 className="font-serif text-2xl sm:text-[24px] text-primary font-normal tracking-tight">
-                    {beautyCategory.name}
-                  </h3>
-                  <div className="flex-1 h-px bg-outline-variant/40" />
-                  <span className="font-sans text-xs tracking-wider text-secondary font-medium">
-                    03
-                  </span>
-                </div>
+        <ScrollReveal>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 pt-2 mb-14 sm:mb-16">
+            {/* Beauty Rituals Card */}
+            {showBeauty && beautyCategory && (
+              <div className="bg-surface-container-low p-6 sm:p-8 lg:p-10 border border-outline-variant/30 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-4 mb-6">
+                    <h3 className="font-serif text-2xl sm:text-[24px] text-primary font-normal tracking-tight">
+                      {beautyCategory.name}
+                    </h3>
+                    <div className="flex-1 h-px bg-outline-variant/40" />
+                    <span className="font-sans text-xs tracking-wider text-secondary font-medium">
+                      03
+                    </span>
+                  </div>
 
-                <div className="divide-y divide-outline-variant/30">
-                  {beautyCategory.items.map((item) => (
-                    <div
-                      key={item.id}
-                      className="py-5 flex items-center justify-between gap-4 transition-colors"
-                    >
-                      <div className="max-w-[280px] sm:max-w-xs">
-                        <h4 className="font-serif text-[17px] sm:text-[18px] text-primary font-normal leading-snug">
-                          {item.name}
-                        </h4>
-                        <p className="font-sans text-xs sm:text-[13px] text-on-surface-variant/80 mt-1 font-normal leading-relaxed">
-                          {item.description} · {item.duration}
-                        </p>
+                  <div className="divide-y divide-outline-variant/30">
+                    {beautyCategory.items.map((item) => (
+                      <div
+                        key={item.id}
+                        className="py-5 flex items-center justify-between gap-4 transition-colors"
+                      >
+                        <div className="max-w-[280px] sm:max-w-xs">
+                          <h4 className="font-serif text-[17px] sm:text-[18px] text-primary font-normal leading-snug">
+                            {item.name}
+                          </h4>
+                          <p className="font-sans text-xs sm:text-[13px] text-on-surface-variant/80 mt-1 font-normal leading-relaxed">
+                            {item.description} · {item.duration}
+                          </p>
+                        </div>
+
+                        <div className="flex items-center gap-4 shrink-0">
+                          <span className="font-serif text-base sm:text-lg text-primary font-medium">
+                            {item.price}
+                          </span>
+                          <a
+                            href="#appointment"
+                            onClick={() => handleReserveClick(item.id)}
+                            className="btn-tactile border border-primary-container text-primary-container hover:bg-primary-container hover:text-surface font-sans text-[11px] font-medium tracking-widest uppercase px-3.5 py-1.5 text-center shrink-0 min-w-[58px]"
+                          >
+                            BOOK
+                          </a>
+                        </div>
                       </div>
-
-                      <div className="flex items-center gap-4 shrink-0">
-                        <span className="font-serif text-base sm:text-lg text-primary font-medium">
-                          {item.price}
-                        </span>
-                        <a
-                          href="#appointment"
-                          onClick={() => handleReserveClick(item.id)}
-                          className="border border-primary-container text-primary-container hover:bg-primary-container hover:text-surface font-sans text-[11px] font-medium tracking-widest uppercase px-3.5 py-1.5 transition-colors text-center shrink-0 min-w-[58px]"
-                        >
-                          BOOK
-                        </a>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Grooming & Styling Card */}
-          {showGrooming && groomingCategory && (
-            <div className="bg-surface-container-low p-6 sm:p-8 lg:p-10 border border-outline-variant/30 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center gap-4 mb-6">
-                  <h3 className="font-serif text-2xl sm:text-[24px] text-primary font-normal tracking-tight">
-                    {groomingCategory.name}
-                  </h3>
-                  <div className="flex-1 h-px bg-outline-variant/40" />
-                  <span className="font-sans text-xs tracking-wider text-secondary font-medium">
-                    04
-                  </span>
-                </div>
-
-                <div className="divide-y divide-outline-variant/30">
-                  {groomingCategory.items.map((item) => (
-                    <div
-                      key={item.id}
-                      className="py-5 flex items-center justify-between gap-4 transition-colors"
-                    >
-                      <div className="max-w-[280px] sm:max-w-xs">
-                        <h4 className="font-serif text-[17px] sm:text-[18px] text-primary font-normal leading-snug">
-                          {item.name}
-                        </h4>
-                        <p className="font-sans text-xs sm:text-[13px] text-on-surface-variant/80 mt-1 font-normal leading-relaxed">
-                          {item.description} · {item.duration}
-                        </p>
-                      </div>
-
-                      <div className="flex items-center gap-4 shrink-0">
-                        <span className="font-serif text-base sm:text-lg text-primary font-medium">
-                          {item.price}
-                        </span>
-                        <a
-                          href="#appointment"
-                          onClick={() => handleReserveClick(item.id)}
-                          className="border border-primary-container text-primary-container hover:bg-primary-container hover:text-surface font-sans text-[11px] font-medium tracking-widest uppercase px-3.5 py-1.5 transition-colors text-center shrink-0 min-w-[58px]"
-                        >
-                          BOOK
-                        </a>
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
-        </div>
+            )}
+
+            {/* Grooming & Styling Card */}
+            {showGrooming && groomingCategory && (
+              <div className="bg-surface-container-low p-6 sm:p-8 lg:p-10 border border-outline-variant/30 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-4 mb-6">
+                    <h3 className="font-serif text-2xl sm:text-[24px] text-primary font-normal tracking-tight">
+                      {groomingCategory.name}
+                    </h3>
+                    <div className="flex-1 h-px bg-outline-variant/40" />
+                    <span className="font-sans text-xs tracking-wider text-secondary font-medium">
+                      04
+                    </span>
+                  </div>
+
+                  <div className="divide-y divide-outline-variant/30">
+                    {groomingCategory.items.map((item) => (
+                      <div
+                        key={item.id}
+                        className="py-5 flex items-center justify-between gap-4 transition-colors"
+                      >
+                        <div className="max-w-[280px] sm:max-w-xs">
+                          <h4 className="font-serif text-[17px] sm:text-[18px] text-primary font-normal leading-snug">
+                            {item.name}
+                          </h4>
+                          <p className="font-sans text-xs sm:text-[13px] text-on-surface-variant/80 mt-1 font-normal leading-relaxed">
+                            {item.description} · {item.duration}
+                          </p>
+                        </div>
+
+                        <div className="flex items-center gap-4 shrink-0">
+                          <span className="font-serif text-base sm:text-lg text-primary font-medium">
+                            {item.price}
+                          </span>
+                          <a
+                            href="#appointment"
+                            onClick={() => handleReserveClick(item.id)}
+                            className="btn-tactile border border-primary-container text-primary-container hover:bg-primary-container hover:text-surface font-sans text-[11px] font-medium tracking-widest uppercase px-3.5 py-1.5 text-center shrink-0 min-w-[58px]"
+                          >
+                            BOOK
+                          </a>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </ScrollReveal>
       )}
 
       {/* 4. Value Adds & Transparency Assurance Bar */}
-      <div className="bg-[#E9DFD2]/60 border border-outline-variant/40 p-6 lg:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="flex items-center gap-4">
-          <div className="w-12 h-12 rounded-full bg-surface flex items-center justify-center shrink-0 border border-outline-variant/30 text-secondary">
-            <ShieldCheck className="w-6 h-6 text-secondary" />
+      <ScrollReveal delay={100}>
+        <div className="bg-[#E9DFD2]/60 border border-outline-variant/40 p-6 lg:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-surface flex items-center justify-center shrink-0 border border-outline-variant/30 text-secondary">
+              <ShieldCheck className="w-6 h-6 text-secondary" />
+            </div>
+            <div>
+              <p className="font-serif text-base sm:text-lg text-primary font-medium">
+                {servicesSection.guaranteeBar.title}
+              </p>
+              <p className="font-sans text-xs sm:text-[13px] text-on-surface-variant mt-0.5 leading-relaxed">
+                {servicesSection.guaranteeBar.description}
+              </p>
+            </div>
           </div>
-          <div>
-            <p className="font-serif text-base sm:text-lg text-primary font-medium">
-              {servicesSection.guaranteeBar.title}
-            </p>
-            <p className="font-sans text-xs sm:text-[13px] text-on-surface-variant mt-0.5 leading-relaxed">
-              {servicesSection.guaranteeBar.description}
-            </p>
+          <div className="flex items-center gap-3 shrink-0 w-full sm:w-auto">
+            <a
+              href={servicesSection.guaranteeBar.ctaHref}
+              className="btn-tactile w-full sm:w-auto inline-flex items-center justify-center bg-primary-container text-on-primary font-sans text-xs font-semibold tracking-widest uppercase px-6 py-3.5 hover:bg-secondary text-center"
+            >
+              {servicesSection.guaranteeBar.ctaText}
+            </a>
           </div>
         </div>
-        <div className="flex items-center gap-3 shrink-0 w-full sm:w-auto">
-          <a
-            href={servicesSection.guaranteeBar.ctaHref}
-            className="w-full sm:w-auto inline-flex items-center justify-center bg-primary-container text-on-primary font-sans text-xs font-semibold tracking-widest uppercase px-6 py-3.5 hover:bg-secondary transition-colors duration-200 text-center"
-          >
-            {servicesSection.guaranteeBar.ctaText}
-          </a>
-        </div>
-      </div>
+      </ScrollReveal>
     </section>
   );
 };

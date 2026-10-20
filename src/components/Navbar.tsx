@@ -119,7 +119,7 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center gap-3 sm:gap-4">
           <a
             href="#appointment"
-            className="inline-flex items-center gap-2 bg-primary-container text-on-primary font-sans text-xs sm:text-[12px] font-semibold tracking-widest uppercase px-4 sm:px-5 py-2.5 sm:py-3 hover:bg-secondary transition-colors duration-200 shadow-none focus:outline-none focus:ring-1 focus:ring-secondary"
+            className="btn-tactile inline-flex items-center gap-2 bg-primary-container text-on-primary font-sans text-xs sm:text-[12px] font-semibold tracking-widest uppercase px-4 sm:px-5 py-2.5 sm:py-3 hover:bg-secondary shadow-none focus:outline-none focus:ring-1 focus:ring-secondary"
           >
             <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-secondary-container" />
             <span className="hidden xs:inline">Reserve Appointment</span>
@@ -133,7 +133,7 @@ export const Navbar: React.FC = () => {
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-nav-drawer"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-primary p-2 focus:outline-none focus:ring-1 focus:ring-primary -mr-1"
+            className="md:hidden text-primary p-2 focus:outline-none focus:ring-1 focus:ring-primary -mr-1 transition-transform duration-200 active:scale-95"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -143,11 +143,12 @@ export const Navbar: React.FC = () => {
       {/* Mobile Drawer Menu */}
       <div
         id="mobile-nav-drawer"
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out border-t border-outline-variant/30 bg-surface ${
-          mobileMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+        className={`md:hidden grid transition-[grid-template-rows,opacity] duration-300 ease-in-out border-t border-outline-variant/30 bg-surface ${
+          mobileMenuOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
         }`}
       >
-        <div className="px-6 py-6 flex flex-col gap-4 font-sans text-xs tracking-widest uppercase text-on-surface-variant">
+        <div className="overflow-hidden">
+          <div className="px-6 py-6 flex flex-col gap-4 font-sans text-xs tracking-widest uppercase text-on-surface-variant">
           <a
             href="#hero"
             onClick={closeMenu}
@@ -209,6 +210,7 @@ export const Navbar: React.FC = () => {
               <span>{salonConfig.contact.phoneDisplay}</span>
             </a>
           </div>
+        </div>
         </div>
       </div>
     </header>

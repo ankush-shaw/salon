@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sparkles } from 'lucide-react';
 import { salonConfig } from '../config/salon';
+import { ScrollReveal } from './ScrollReveal';
 
 export const Gallery: React.FC = () => {
   const { gallerySection } = salonConfig;
@@ -14,7 +15,7 @@ export const Gallery: React.FC = () => {
   return (
     <section id="gallery" className="py-20 sm:py-24 px-5 sm:px-6 lg:px-12 max-w-7xl mx-auto">
       {/* Header */}
-      <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+      <ScrollReveal className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
         <span className="font-sans text-[10px] sm:text-[11px] uppercase tracking-widest text-secondary font-bold">
           {gallerySection.eyebrow}
         </span>
@@ -24,12 +25,12 @@ export const Gallery: React.FC = () => {
         <p className="font-sans text-sm sm:text-base text-on-surface-variant mt-3 font-normal">
           {gallerySection.subtitle}
         </p>
-      </div>
+      </ScrollReveal>
 
       {/* Asymmetrical Editorial Mosaic Grid */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
         {/* Column 1: 5 cols */}
-        <div className="md:col-span-5 space-y-6">
+        <ScrollReveal delay={100} className="md:col-span-5 space-y-6">
           {item1 && (
             <div className="bg-surface-container-high border border-outline-variant/30 overflow-hidden group">
               <div className="aspect-[3/4] overflow-hidden bg-surface">
@@ -37,7 +38,7 @@ export const Gallery: React.FC = () => {
                   src={item1.src}
                   alt={item1.alt}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] will-change-transform"
                 />
               </div>
               <div className="p-4 bg-surface-container-lowest flex justify-between items-center">
@@ -58,7 +59,7 @@ export const Gallery: React.FC = () => {
                   src={item2.src}
                   alt={item2.alt}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] will-change-transform"
                 />
               </div>
               <div className="p-4 bg-surface-container-lowest flex justify-between items-center">
@@ -71,10 +72,10 @@ export const Gallery: React.FC = () => {
               </div>
             </div>
           )}
-        </div>
+        </ScrollReveal>
 
         {/* Column 2: 3 cols (Offset vertically on md+) */}
-        <div className="md:col-span-3 space-y-6 pt-0 md:pt-12">
+        <ScrollReveal delay={200} className="md:col-span-3 space-y-6 pt-0 md:pt-12">
           {item3 && (
             <div className="bg-surface-container-high border border-outline-variant/30 overflow-hidden group">
               <div className="aspect-[2/3] overflow-hidden bg-surface">
@@ -82,7 +83,7 @@ export const Gallery: React.FC = () => {
                   src={item3.src}
                   alt={item3.alt}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] will-change-transform"
                 />
               </div>
               <div className="p-4 bg-surface-container-lowest flex justify-between items-center">
@@ -105,10 +106,10 @@ export const Gallery: React.FC = () => {
               {gallerySection.highlightCard.description}
             </p>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Column 3: 4 cols */}
-        <div className="md:col-span-4 space-y-6">
+        <ScrollReveal delay={300} className="md:col-span-4 space-y-6">
           {item4 && (
             <div className="bg-surface-container-high border border-outline-variant/30 overflow-hidden group">
               <div className="aspect-square overflow-hidden bg-surface">
@@ -116,7 +117,7 @@ export const Gallery: React.FC = () => {
                   src={item4.src}
                   alt={item4.alt}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] will-change-transform"
                 />
               </div>
               <div className="p-4 bg-surface-container-lowest flex justify-between items-center">
@@ -137,7 +138,7 @@ export const Gallery: React.FC = () => {
                   src={item5.src}
                   alt={item5.alt}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] will-change-transform"
                 />
               </div>
               <div className="p-4 bg-surface-container-lowest flex justify-between items-center">
@@ -150,7 +151,7 @@ export const Gallery: React.FC = () => {
               </div>
             </div>
           )}
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

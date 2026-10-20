@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { salonConfig } from '../config/salon';
+import { ScrollReveal } from './ScrollReveal';
 
 export const FAQ: React.FC = () => {
   const { faqSection } = salonConfig;
@@ -14,16 +15,16 @@ export const FAQ: React.FC = () => {
 
   return (
     <section id="faq" className="py-20 sm:py-24 px-5 sm:px-6 lg:px-12 max-w-4xl mx-auto">
-      <div className="text-center mb-12 sm:mb-16">
+      <ScrollReveal className="text-center mb-12 sm:mb-16">
         <span className="font-sans text-[10px] sm:text-[11px] uppercase tracking-widest text-secondary font-bold">
           {faqSection.eyebrow}
         </span>
         <h2 className="font-serif text-3xl sm:text-4xl lg:text-[46px] lg:leading-[54px] text-primary mt-2 font-normal">
           {faqSection.title}
         </h2>
-      </div>
+      </ScrollReveal>
 
-      <div className="space-y-4">
+      <ScrollReveal delay={100} className="space-y-4">
         {faqSection.items.map((item, index) => {
           const isOpen = openIndices.includes(index);
           const controlId = `faq-control-${index}`;
@@ -54,18 +55,20 @@ export const FAQ: React.FC = () => {
                 id={panelId}
                 role="region"
                 aria-labelledby={controlId}
-                className={`overflow-hidden transition-all duration-300 ${
-                  isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out ${
+                  isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0 pointer-events-none'
                 }`}
               >
-                <div className="px-5 sm:px-6 pb-6 pt-2 border-t border-outline-variant/10 text-on-surface-variant font-sans text-xs sm:text-[14px] leading-relaxed font-normal">
-                  {item.answer}
+                <div className="overflow-hidden">
+                  <div className="px-5 sm:px-6 pb-6 pt-2 border-t border-outline-variant/10 text-on-surface-variant font-sans text-xs sm:text-[14px] leading-relaxed font-normal">
+                    {item.answer}
+                  </div>
                 </div>
               </div>
             </div>
           );
         })}
-      </div>
+      </ScrollReveal>
     </section>
   );
 };
