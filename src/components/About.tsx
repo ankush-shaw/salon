@@ -18,6 +18,9 @@ export const About: React.FC = () => {
               src={aboutSection.image.src}
               alt={aboutSection.image.alt}
               loading="lazy"
+              decoding="async"
+              width="600"
+              height="750"
               className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-[1.02]"
             />
           </div>

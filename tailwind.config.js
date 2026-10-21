@@ -43,7 +43,7 @@ export default {
         "surface-tint": "#615e5b",
         "on-surface": "#1c1c19",
         "on-surface-variant": "#4b4640",
-        "outline": "#7d766f",
+        "outline": "#5a544e",
         "outline-variant": "#cec5bd",
         "inverse-surface": "#31302d",
         "inverse-on-surface": "#f3f0eb",

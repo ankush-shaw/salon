@@ -26,9 +26,9 @@ export const Testimonials: React.FC = () => {
               className="bg-surface-container-lowest p-6 sm:p-8 border border-outline-variant/30 flex flex-col justify-between transition-colors duration-200 hover:border-outline-variant/60"
             >
               <div>
-                <div className="flex gap-1 text-secondary mb-5 sm:mb-6" aria-label={`${item.rating} out of 5 stars`}>
+                <div role="img" aria-label={`${item.rating} out of 5 stars`} className="flex gap-1 text-secondary mb-5 sm:mb-6">
                   {Array.from({ length: item.rating }).map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-current text-secondary" />
+                    <Star key={i} aria-hidden="true" className="w-3.5 h-3.5 fill-current text-secondary" />
                   ))}
                 </div>
                 <p className="font-sans text-xs sm:text-[14px] text-on-surface-variant leading-relaxed italic mb-6 font-normal">

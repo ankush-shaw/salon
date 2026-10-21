@@ -66,6 +66,10 @@ export const Hero: React.FC = () => {
                 src={hero.image.src}
                 alt={hero.image.alt}
                 loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                width="480"
+                height="600"
                 className="w-full h-full object-cover grayscale-[15%] contrast-[105%]"
               />
             </div>

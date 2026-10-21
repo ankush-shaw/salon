@@ -99,7 +99,9 @@ export const Footer: React.FC = () => {
             ) : (
               <form onSubmit={handleJournalSubmit} className="flex items-center gap-2 pt-2">
                 <input
+                  id="footer-email"
                   type="email"
+                  aria-label="Your email address"
                   required
                   placeholder="Your email address"
                   value={subscribedEmail}

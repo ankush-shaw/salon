@@ -137,6 +137,9 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
                     src={servicesSection.curatorsChoice.image.src}
                     alt={servicesSection.curatorsChoice.image.alt}
                     loading="lazy"
+                    decoding="async"
+                    width="600"
+                    height="450"
                   />
                 </div>
 

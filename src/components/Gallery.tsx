@@ -38,6 +38,9 @@ export const Gallery: React.FC = () => {
                   src={item1.src}
                   alt={item1.alt}
                   loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="800"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] will-change-transform"
                 />
               </div>
@@ -59,6 +62,9 @@ export const Gallery: React.FC = () => {
                   src={item2.src}
                   alt={item2.alt}
                   loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="600"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] will-change-transform"
                 />
               </div>
@@ -83,6 +89,9 @@ export const Gallery: React.FC = () => {
                   src={item3.src}
                   alt={item3.alt}
                   loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="900"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] will-change-transform"
                 />
               </div>
@@ -117,6 +126,9 @@ export const Gallery: React.FC = () => {
                   src={item4.src}
                   alt={item4.alt}
                   loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="600"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] will-change-transform"
                 />
               </div>
@@ -138,6 +150,9 @@ export const Gallery: React.FC = () => {
                   src={item5.src}
                   alt={item5.alt}
                   loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="750"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] will-change-transform"
                 />
               </div>

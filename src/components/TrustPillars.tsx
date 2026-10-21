@@ -35,9 +35,9 @@ export const TrustPillars: React.FC = () => {
             {trustPillars.pillars.map((pillar) => (
               <div key={pillar.id} className="flex flex-col items-center px-4 sm:px-6 py-4">
                 {renderIcon(pillar.icon)}
-                <h3 className="font-serif text-lg sm:text-[20px] text-primary font-medium mb-2">
+                <h2 className="font-serif text-lg sm:text-[20px] text-primary font-medium mb-2">
                   {pillar.title}
-                </h3>
+                </h2>
                 <p className="font-sans text-xs sm:text-[13px] text-on-surface-variant max-w-xs leading-relaxed font-normal">
                   {pillar.description}
                 </p>
