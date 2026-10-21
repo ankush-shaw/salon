@@ -59,7 +59,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
           }`}
         >
           All Rituals
-          <span className="ml-1.5 text-xs opacity-75 font-normal">(10)</span>
+          <span className="ml-1.5 text-xs font-normal">(10)</span>
         </button>
 
         <button
@@ -72,7 +72,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
           }`}
         >
           Hair Architecture
-          <span className="ml-1.5 text-xs opacity-75 font-normal">(3)</span>
+          <span className="ml-1.5 text-xs font-normal">(3)</span>
         </button>
 
         <button
@@ -85,7 +85,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
           }`}
         >
           Skin &amp; Cellular Facials
-          <span className="ml-1.5 text-xs opacity-75 font-normal">(2)</span>
+          <span className="ml-1.5 text-xs font-normal">(2)</span>
         </button>
 
         <button
@@ -98,7 +98,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
           }`}
         >
           Beauty Rituals
-          <span className="ml-1.5 text-xs opacity-75 font-normal">(3)</span>
+          <span className="ml-1.5 text-xs font-normal">(3)</span>
         </button>
 
         <button
@@ -111,7 +111,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
           }`}
         >
           Grooming &amp; Styling
-          <span className="ml-1.5 text-xs opacity-75 font-normal">(3)</span>
+          <span className="ml-1.5 text-xs font-normal">(3)</span>
         </button>
       </div>
 
